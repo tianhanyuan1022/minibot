@@ -69,7 +69,7 @@ class Consolidator:
 
         transcript = "\n".join(f"[{m.type}] {_message_text(m)}" for m in old_messages)
         prompt = (
-            "请把下面这段对话历史压缩成一段简洁的摘要（中文，控制在 200 字以内），"
+            "请把下面这段对话历史压缩成一段简洁的摘要（中文，控制在 200 字以内）注意：一定不要输出给客户看，"
             "保留关键事实、已做出的决定，以及还没完成的任务：\n\n" + transcript
         )
 

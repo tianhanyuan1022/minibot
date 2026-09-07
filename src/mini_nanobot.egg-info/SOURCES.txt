@@ -16,7 +16,6 @@ src/mini_bot/channels/__init__.py
 src/mini_bot/channels/base.py
 src/mini_bot/channels/console.py
 src/mini_bot/channels/manager.py
-src/mini_bot/mcp/mcp_tools.py
 src/mini_bot/memory/__init__.py
 src/mini_bot/memory/consolidator.py
 src/mini_bot/memory/dream.py

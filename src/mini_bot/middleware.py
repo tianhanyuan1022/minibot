@@ -152,6 +152,13 @@ class EmptyResponseRecoveryMiddleware(AgentMiddleware[AgentState, AgentContext])
 def _should_retry_model(exc: Exception) -> bool:
     return classify_error(exc, attempt=0).should_retry
 
+_SUMMARY_PROMPT = (
+    "你是 mini-nanobot 的上下文压缩程序。把下面的对话历史压缩成一段内部摘要，"
+    "仅供你后续继续对话时参考，绝对不要把这则摘要复述或输出给用户。\n"
+    "要求：用中文，简洁；保留关键事实、已做出的决定、未完成的任务。\n\n"
+    "对话历史：\n{messages}"
+)
+
 
 def build_agent_middleware(
     llm: BaseChatModel,
@@ -201,6 +208,7 @@ def build_agent_middleware(
             llm,
             trigger=("tokens", trigger_tokens),
             keep=("tokens", keep_tokens),
+            summary_prompt=_SUMMARY_PROMPT,
         ),
         SummaryArchiveMiddleware(),
         EmptyResponseRecoveryMiddleware(),
