@@ -14,6 +14,7 @@ Requires-Dist: openai>=2.46.0
 Requires-Dist: pydantic
 Requires-Dist: python-dotenv
 Requires-Dist: rich
+Requires-Dist: langchain-ollama>=1.1.0
 
 # mini-nanobot
 

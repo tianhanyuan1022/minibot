@@ -20,7 +20,7 @@ from ..bus import InboundMessage, MessageBus
 
 class BaseChannel(ABC):
     name: str = "base"
-    supports_streaming: bool = False
+    supports_streaming: bool = True
 
     def __init__(self, bus: MessageBus) -> None:
         self.bus = bus

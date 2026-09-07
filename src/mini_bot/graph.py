@@ -29,7 +29,7 @@ from .session import SessionManager
 from .state import AgentContext, AgentState
 from .subagents import SubagentManager
 from .tools import GOAL_TOOLS, load_mcp_tools, make_basic_tools, make_spawn_tool
-
+from langchain_ollama import ChatOllama
 
 def _build_llm(cfg: AppConfig) -> ChatOpenAI:
     return ChatOpenAI(
@@ -40,6 +40,10 @@ def _build_llm(cfg: AppConfig) -> ChatOpenAI:
         max_tokens=cfg.provider.max_tokens,
         timeout=cfg.provider.timeout_seconds,
         extra_body={"enable_thinking": False},
+
+        # base_url="http://localhost:11434",
+        # num_predict=cfg.provider.max_tokens,
+        # reasoning=False,
     )
 
 

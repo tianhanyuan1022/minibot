@@ -8,3 +8,4 @@ openai>=2.46.0
 pydantic
 python-dotenv
 rich
+langchain-ollama>=1.1.0
