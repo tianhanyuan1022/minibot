@@ -1,0 +1,11 @@
+{
+  "12306-mcp": {
+    "transport": "sse",
+    "url": "https://mcp.api-inference.modelscope.net/ee4c15e4898343/sse"
+  },
+  "Bazi-MCP": {
+    "transport": "sse",
+    "url": "https://mcp.api-inference.modelscope.net/96b90f78d06c4d/sse"
+  }
+}
+
